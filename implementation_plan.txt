@@ -1,0 +1,25 @@
+.🛠️ Technology Stack RecommendationFor an event-driven, community-focused site like NARI, Next.js or Astro paired with a headless CMS is ideal for fast page loads and seamless dynamic routing (like event pages, e-catalogs, and blogs).LayerRecommended TechnologyWhy?Frontend FrameworkNext.js (App Router) or AstroExcellent SEO optimization, static site generation for blog/expo pages, and fast loading speeds.StylingTailwind CSS + Shadcn UIRapid UI development with accessible, ready-made components.Content Management (CMS)Sanity.io or StrapiAllows non-technical staff to easily update speakers, workshops, and 2026 Summit data.Database & AuthSupabase or FirebaseFast setup for volunteer applications, newsletter signups, and ticket management.Hosting & DeploymentVercel or NetlifyOne-click deployments, automatic preview branches, and world-class global CDN.🚀 The Step-by-Step Implementation Flow1.Content Modeling & CMS Setup:Phase 1: Foundation.Define your data schemas in your Headless CMS before writing frontend code. Set up schemas for Speakers (name, bio, image, social links), Events/Workshops (date, time, venue, description), and Blog Posts (title, slug, rich text content).2.Global Component & Layout Architecture:Phase 2: UI Engineering.Build core global components to prevent code repetition. Program the global Navigation Bar (handling the nested drop-downs for About, Events, and Summit 2026) and the Global Footer (with the newsletter signup block and policy links). Set up the Tailwind configuration with a professional, academic-meets-modern color palette.3.Static Page & Dynamic Route Generation:Phase 3: Page Building.Build out the pages utilizing the data from Phase 1.Static Pages: Home, About, Contact (with embedded Google Maps for Knowledge Park 3rd).Dynamic Routes: /events/[slug] for successful event pages, /blog/[slug] for articles, and /summit-2026/* sub-pages like the E-Catalogue and Expo map.4.Interactive Features Integration:Phase 4: Backend Hookup.Connect your frontend forms to your backend services. Connect the Newsletter subscription form to an email marketing tool API (e.g., Resend, Mailchimp). Route the Volunteer application form submissions directly to a Supabase database or a webhook that alerts your internal HR team.5.SEO, Performance Tuning & Deployment:Phase 5: Launch.Run a production checklist. Generate a dynamic sitemap.xml file. Add Meta OpenGraph tags to every dynamic page so speaker profiles look great when shared on LinkedIn or Twitter. Deploy the repository to Vercel, and configure domain routing for narinexus.com.📂 Project Directory StructureHere is how your codebase should look if you use a standard Next.js (App Router) setup:Plaintextsrc/
+├── app/
+│   ├── layout.tsx             # Global layout (Navbar, Footer, Providers)
+│   ├── page.tsx               # Homepage (Metrics, Features, Highlights)
+│   ├── about/                 # Static content pages
+│   ├── blog/
+│   │   ├── page.tsx           # Blog archive list
+│   │   └── [slug]/            # Dynamic individual blog posts
+│   ├── events/
+│   │   ├── page.tsx           # Event listing
+│   │   └── [slug]/            # Individual event details & speaker pages
+│   ├── summit-2026/           # Dedicated route group for the upcoming summit
+│   │   ├── page.tsx           # Summit main page / Theme
+│   │   ├── e-catalogue/       # Digital expo assets
+│   │   └── expo/              # Interactive floor map
+│   └── contact/               # Contact forms, location details, FAQs
+├── components/
+│   ├── ui/                    # Reusable primitives (Buttons, Inputs, Dialogs)
+│   ├── Navbar.tsx             # Dropdown navigation matrix
+│   ├── Footer.tsx             # Email signup and compliance links
+│   └── EventCard.tsx          # Reusable component for showcasing workshops
+└── lib/
+    ├── cms.ts                 # CMS client fetching logic (Sanity/Strapi)
+    └── supabase.ts            # Form submission handler logic
+🎯 High-Priority Implementation Notes⚠️ Critical Detail on Domain Consistency:The markdown notes that while the domain is narinexus.com, official communication goes through @nari.world. When setting up the contact page and transactional emails (like volunteer confirmations or newsletter welcome messages), ensure SPF and DKIM records are configured specifically for nari.world so your automatic emails don't flag spam filters.⚡ Image Optimization Warning:With 80+ speakers and extensive media/expo galleries, your page weight will balloon quickly. Ensure all uploaded speaker headshots and event imagery run through an automated WebP/AVIF compression pipeline via your CMS or Next.js  component to keep mobile load times under 2 seconds.
