@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "narinexus-web",
   "private": true,
   "version": "0.0.1",
@@ -37,5 +38,34 @@
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.59.4",
     "vite": "^5.0.8"
+=======
+  "name": "nari-nexus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.17.9",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2"
+>>>>>>> b532d6d0899c38f64735f58c253bd8c68d35452d
   }
 }
